@@ -67,7 +67,7 @@
       </nav>
     </div>
     <main class="content-area">
-      <div class="search-bar col-md-8 col-6 mx-auto">
+      <div class="search-bar col-md-6 col-6 mx-auto">
         <h1 class="text-center">Lyrics Search</h1>
         <div class="search-box my-5">
           <input
@@ -88,18 +88,19 @@
       </div>
       <!-- Single Lyrics -->
       <div class="single-lyrics text-center">
-        <button class="btn go-next">Next</button>
         <h2 class="text-success mb-4" id="lyrics-title"></h2>
         <pre class="lyric text-danger"></pre>
       </div>
       <!-- === Fancy results === -->
       <div class="search-result col-md-8 mx-auto py-4" id="fancy-result"></div>
+      <button onclick="nextSongArray()">Next</button>
       <!-- Fancy Single Lyrics -->
-      <!-- <div class="single-lyrics text-center">
-        <button class="btn go-back">&lsaquo;&lsaquo;&lsaquo;</button>
-        <h2 class="text-success mb-4" id="lyrics-title-fancy"></h2>
-        <pre class="lyric-fancy text-danger"></pre>
-      </div> -->
+      <div class="container fancy-result-container">
+        <div class="single-lyrics text-center">
+          <h2 class="mb-4" id="lyrics-title-fancy"></h2>
+          <pre class="lyric-fancy text-danger"></pre>
+        </div>
+      </div>
     </main>
 
     <!-- Optional JavaScript -->

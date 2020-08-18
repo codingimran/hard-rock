@@ -12,11 +12,12 @@ body {
 }
 .searchDiv {
   background-image: url(../images/guitar-1.jpg);
-  width: 100vh;
-  height: 50vh;
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  padding-bottom: 300px;
 }
 .form-control {
   background-color: rgba(255, 255, 255, 0.2);
@@ -59,7 +60,8 @@ body {
   color: rgba(255, 153, 0, 0.829);
   font-family: "Gochi Hand", cursive;
 }
-.lyric {
+.lyric,
+.lyric-fancy {
   font-family: "Roboto", cursive;
   font-weight: 600;
   font-style: 22px;
@@ -71,4 +73,12 @@ audio {
 
 .getLyrics2H {
   visibility: hidden;
+}
+.fancy-result-container {
+  background-image: url(../images/bg-image.png);
+  border-radius: 10px;
+}
+#lyrics-title-fancy {
+  font-family: "Gochi Hand", cursive;
+  color: rgb(155, 0, 0);
 }
