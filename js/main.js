@@ -134,5 +134,4 @@ async function nextSongArray() {
   const nextS = await fetch(`https://cors-anywhere.herokuapp.com/${apiNext}`);
   const nextSData = await nextS.json();
   console.log(nextSData);
-  const error = await console.log(error);
 }
