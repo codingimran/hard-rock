@@ -147,5 +147,6 @@ async function nextSongArray(data) {
     // console.log(songs);
     searchResultShower(songName, songAuthor);
     fancyResult(songName, songAuthor, audioPreview);
+    nextSongArray(nextSData.next);
   });
 }
