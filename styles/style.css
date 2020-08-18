@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap");
+
+body {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: rgb(240, 222, 222);
+  background-image: url(../images/bg-image.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+.searchDiv {
+  background-image: url(../images/guitar-1.jpg);
+  width: 100vh;
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.form-control {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 22px;
+  border: none;
+  border-radius: 25px;
+}
+.btn {
+  border-radius: 1.5rem;
+  padding: 9px 20px;
+}
+
+.btn-privious {
+  background: rgba(252, 87, 87, 0.2);
+  color: #ffffff;
+}
+.navbar-toggler {
+  border: none;
+}
+.search-box {
+  position: relative;
+}
+.search-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+.single-result {
+  background: rgba(255, 71, 71, 0.2);
+  border-radius: 15px;
+  transition: transform 0.8s ease-out;
+}
+.single-result:hover {
+  transform: scale(1.1);
+  box-shadow: 10px 10px 10px #000;
+}
+.lyrics-name,
+.author-name {
+  color: rgba(255, 153, 0, 0.829);
+  font-family: "Gochi Hand", cursive;
+}
+.lyric {
+  font-family: "Roboto", cursive;
+  font-weight: 600;
+  font-style: 22px;
+}
+
+audio {
+  outline: none;
+}
+
+.getLyrics2H {
+  visibility: hidden;
+}
