@@ -21,6 +21,10 @@ async function getSongList(searchValue) {
   const data = await searchResult.json();
   console.log(data);
   songDetails(data);
+  ///test
+  document.getElementById("nextSongs").addEventListener("click", () => {
+    nextSongArray(data.next);
+  });
 }
 
 async function songDetails(data) {
@@ -129,9 +133,9 @@ function hideLyrics() {
 }
 
 // next
-const apiNext = `http://api.deezer.com/search?limit=10&q${searchInput.value.trim()}=&index=10`;
-async function nextSongArray() {
-  const nextS = await fetch(`https://cors-anywhere.herokuapp.com/${apiNext}`);
+// const apiNext = `http://api.deezer.com/search?limit=10&q${searchInput.value.trim()}=&index=10`;
+async function nextSongArray(data) {
+  const nextS = await fetch(`${data}`);
   const nextSData = await nextS.json();
   console.log(nextSData);
 }
