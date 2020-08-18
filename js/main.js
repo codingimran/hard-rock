@@ -139,7 +139,7 @@ async function nextSongArray(data) {
   const nextSData = await nextS.json();
   const nextSDataArray = nextSData.data;
   const TenSongs = nextSDataArray.slice(0, 10);
-  console.log(TenSongs);
+  console.log(nextSData);
   TenSongs.map((song) => {
     const songName = song.title_short;
     const songAuthor = song.artist.name;
