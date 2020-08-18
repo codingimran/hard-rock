@@ -19,7 +19,6 @@ const api = "https://api.lyrics.ovh";
 async function getSongList(searchValue) {
   const searchResult = await fetch(`${api}/suggest/${searchValue}`);
   const data = await searchResult.json();
-  console.log(data);
   songDetails(data);
   ///test
   // document.getElementById("nextSongs").addEventListener("click", () => {
@@ -30,7 +29,6 @@ async function getSongList(searchValue) {
 async function songDetails(data) {
   filterSong = data.data;
   const TenSong = filterSong.slice(0, 10);
-  console.log(TenSong);
   TenSong.map((song) => {
     const songName = song.title_short;
     const songAuthor = song.artist.name;
