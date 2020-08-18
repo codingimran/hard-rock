@@ -19,18 +19,16 @@ const api = "https://api.lyrics.ovh";
 async function getSongList(searchValue) {
   const searchResult = await fetch(`${api}/suggest/${searchValue}`);
   const data = await searchResult.json();
-  console.log(data);
   songDetails(data);
   ///test
-  document.getElementById("nextSongs").addEventListener("click", () => {
-    nextSongArray(data.next);
-  });
+  // document.getElementById("nextSongs").addEventListener("click", () => {
+  //   // nextSongArray(data.next);
+  // });
 }
 
 async function songDetails(data) {
   filterSong = data.data;
   const TenSong = filterSong.slice(0, 10);
-  console.log(TenSong);
   TenSong.map((song) => {
     const songName = song.title_short;
     const songAuthor = song.artist.name;
@@ -132,21 +130,20 @@ function hideLyrics() {
   document.querySelector(".getLyrics2").style.visibility = "visible";
 }
 
-// next
-// const apiNext = `http://api.deezer.com/search?limit=10&q${searchInput.value.trim()}=&index=10`;
-async function nextSongArray(data) {
-  const nextS = await fetch(`https://cors-anywhere.herokuapp.com/${data}`);
-  const nextSData = await nextS.json();
-  const nextSDataArray = nextSData.data;
-  const TenSongs = nextSDataArray.slice(0, 10);
-  console.log(nextSData);
-  TenSongs.map((song) => {
-    const songName = song.title_short;
-    const songAuthor = song.artist.name;
-    const audioPreview = song.preview;
-    // console.log(songs);
-    searchResultShower(songName, songAuthor);
-    fancyResult(songName, songAuthor, audioPreview);
-    nextSongArray(nextSData.next);
-  });
-}
+// // next
+// // const apiNext = `http://api.deezer.com/search?limit=10&q${searchInput.value.trim()}=&index=10`;
+// async function nextSongArray(data) {
+//   const nextS = await fetch(`https://cors-anywhere.herokuapp.com/${data}`);
+//   const nextSData = await nextS.json();
+//   const nextSDataArray = nextSData.data;
+//   const TenSongs = nextSDataArray.slice(0, 10);
+//   console.log(nextSData);
+//   TenSongs.map((song) => {
+//     const songName = song.title_short;
+//     const songAuthor = song.artist.name;
+//     const audioPreview = song.preview;
+//     // console.log(songs);
+//     searchResultShower(songName, songAuthor);
+//     fancyResult(songName, songAuthor, audioPreview);
+//   });
+// }
