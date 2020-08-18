@@ -4,6 +4,7 @@ const searchBtn = document.getElementById("search-btn");
 const showLyrics = document.getElementById("get-lyrics");
 const goBack = document.querySelector(".go-back");
 const goNext = document.querySelector(".go-next");
+const getLyricsHider = document.getElementById("getLyrics2");
 //event listener
 
 searchBtn.addEventListener("click", () => getSearchInput());
@@ -18,7 +19,7 @@ const api = "https://api.lyrics.ovh";
 async function getSongList(searchValue) {
   const searchResult = await fetch(`${api}/suggest/${searchValue}`);
   const data = await searchResult.json();
-  console.log(data.next);
+  console.log(data);
   songDetails(data);
 }
 
@@ -58,8 +59,6 @@ async function getLyrics2(song, artist) {
     document.querySelector(".lyric-fancy").innerText = lyrics.error;
   }
   document.querySelector("#lyrics-title-fancy").innerText = song;
-  document.querySelector(".getLyrics2H").style.visibility = "visible";
-  document.querySelector(".getLyrics2").style.visibility = "hidden";
 }
 
 // function
@@ -110,23 +109,13 @@ function fancyResult(song, artist, audio) {
               </p>
             </div>
             <div class="col-md-5 text-md-right text-center">
-              <button class="btn btn-success getLyrics2" onclick="getLyrics2('${song}', '${artist}')">Get Lyrics</button>
-              <button class="btn btn-success getLyrics2H" onclick="hideLyrics()")>Hide Lyrics</button>
+              <button class="btn btn-success mb-2" id="getLyrics2" onclick="getLyrics2('${song}', '${artist}')">Get Lyrics</button>
+             
             </div>
             <div class="col-md-12 text-center">
-              <audio
-                src="${audio}"
-                controls
-                style="background-color: transparent; border-radius: 100px;"
-              >
-                Your browser not support audio.
-              </audio>
+              <a href="${audio}" target="__blank">Preview</a>
             </div>
           </div>
-          <div class="single-lyrics text-center">
-        <h2 class="text-success mb-4" id="lyrics-title-fancy"></h2>
-        <pre class="lyric-fancy text-danger"></pre>
-      </div>
   `;
   document.querySelector("#fancy-result").appendChild(divTag);
 }
@@ -137,4 +126,13 @@ function hideLyrics() {
   document.querySelector("#lyrics-title-fancy").innerText = "";
   document.querySelector(".getLyrics2H").style.visibility = "hidden";
   document.querySelector(".getLyrics2").style.visibility = "visible";
+}
+
+// next
+const apiNext = `http://api.deezer.com/search?limit=10&q${searchInput.value.trim()}=&index=10`;
+async function nextSongArray() {
+  const nextS = await fetch(`https://cors-anywhere.herokuapp.com/${apiNext}`);
+  const nextSData = await nextS.json();
+  console.log(nextSData);
+  const error = await console.log(error);
 }
