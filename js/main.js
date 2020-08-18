@@ -135,7 +135,7 @@ function hideLyrics() {
 // next
 // const apiNext = `http://api.deezer.com/search?limit=10&q${searchInput.value.trim()}=&index=10`;
 async function nextSongArray(data) {
-  const nextS = await fetch(`${data}`);
+  const nextS = await fetch(`https://cors-anywhere.herokuapp.com/${data}`);
   const nextSData = await nextS.json();
   console.log(nextSData);
 }
