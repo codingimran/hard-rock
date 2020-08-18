@@ -137,5 +137,15 @@ function hideLyrics() {
 async function nextSongArray(data) {
   const nextS = await fetch(`https://cors-anywhere.herokuapp.com/${data}`);
   const nextSData = await nextS.json();
-  console.log(nextSData);
+  const nextSDataArray = nextSData.data;
+  const TenSongs = nextSDataArray.slice(0, 10);
+  console.log(TenSongs);
+  TenSongs.map((song) => {
+    const songName = song.title_short;
+    const songAuthor = song.artist.name;
+    const audioPreview = song.preview;
+    // console.log(songs);
+    searchResultShower(songName, songAuthor);
+    fancyResult(songName, songAuthor, audioPreview);
+  });
 }
