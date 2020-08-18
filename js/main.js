@@ -22,9 +22,9 @@ async function getSongList(searchValue) {
   console.log(data);
   songDetails(data);
   ///test
-  document.getElementById("nextSongs").addEventListener("click", () => {
-    // nextSongArray(data.next);
-  });
+  // document.getElementById("nextSongs").addEventListener("click", () => {
+  //   // nextSongArray(data.next);
+  // });
 }
 
 async function songDetails(data) {
